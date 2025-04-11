@@ -32,25 +32,104 @@
  *
  * https://make.wordpress.org/core/2021/06/29/on-layout-and-content-width-in-wordpress-5-8/
  */
-.page-content > *,
-.entry-content > * {
-	/* Content width from the `theme.json` file */
-	@apply max-w-content mx-auto;
+
+.h1 {
+	@apply flex flex-col md:flex-row justify-between items-center gap-5 font-poppins font-bold text-7xl md:text-[112px] leading-[72px] md:leading-[112px] before:content-['xabier'] before:text-site-white before:font-poppins before:font-bold before:text-lg after:content-['remirez'] after:text-site-white after:font-poppins after:font-bold after:text-lg;
 }
 
-.entry-content > .alignwide {
-	/* Wide width from the `theme.json` file */
-	@apply max-w-wide;
+.h2 {
+	@apply font-poppins text-4xl md:text-6xl font-bold leading-10 md:leading-[60px];
 }
 
-.entry-content > .alignfull {
-	@apply max-w-none;
+.h3 {
+	@apply font-poppins text-2xl md:text-3xl font-bold leading-9;
+}
+.button {
+	@apply relative z-1 w-full md:w-fit flex items-center justify-center py-4 px-10 rounded-full font-poppins font-bold text-base border overflow-hidden transition-colors duration-500 ease-in-out;
 }
 
-.entry-content > .alignleft {
-	@apply float-left mr-8;
+/* .button--primary {
+	@apply bg-primary text-white border-none after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-site-black after:border-0 after:opacity-[50%] after:rounded-full after:z-[-1] after:scale-x-0 after:origin-right after:transition-transform after:duration-300 after:ease-in hover:after:scale-x-100 hover:after:origin-left;
+} */
+
+.button--primary {
+	@apply bg-primary text-white border-none before:absolute before:content-[''] before:top-0 before:left-0 before:bottom-0 before:right-0 before:z-[-1] before:bg-site-black before:opacity-50 before:rounded-full before:scale-0 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-125 focus:before:scale-125;
 }
 
-.entry-content > .alignright {
-	@apply float-right ml-8;
+/* .button--hollow-black {
+	@apply bg-transparent text-black border-black after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-site-black after:border-0 after:opacity-[50%] after:rounded-full after:z-[-1] after:scale-x-0 after:origin-right after:transition-transform after:duration-300 after:ease-in hover:after:scale-x-100 hover:after:origin-left hover:after:rounded-full;
+} */
+
+.button--hollow-black {
+	@apply bg-transparent text-black border-black before:absolute before:content-[''] before:top-0 before:left-0 before:bottom-0 before:right-0 before:z-[-1] before:bg-site-black before:opacity-50 before:rounded-full before:scale-0 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-125 focus:before:scale-125;
+}
+
+/* .button--hollow-white {
+	@apply bg-transparent text-white border-white after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-site-white after:border-0 after:opacity-[50%] after:rounded-full after:z-[-1] after:scale-x-0 after:origin-right after:transition-transform after:duration-300 after:ease-in hover:after:scale-x-100 hover:after:origin-left hover:after:rounded-full;
+} */
+
+.button--hollow-white {
+	@apply bg-transparent text-white border-white hover:text-site-black focus:text-site-black hover:border-site-black focus:border-site-black before:absolute before:content-[''] before:top-0 before:left-0 before:bottom-0 before:right-0 before:z-[-1] before:bg-site-white before:opacity-50 before:rounded-full before:scale-0 before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-125 focus:before:scale-125;
+}
+
+.link {
+	@apply relative text-primary font-poppins transition-colors duration-300 after:absolute after:content-[''] after:left-0 after:bottom-0 after:w-full after:h-[2px] translate-x-50 after:scale-x-0 after:transition-transform after:duration-300 hover:after:translate-x-0 hover:after:scale-x-100;
+}
+
+.link--bold {
+	@apply font-bold;
+}
+
+.link--primary {
+	@apply text-primary hover:text-site-white after:bg-site-white;
+}
+
+.link--white {
+	@apply text-white hover:text-site-black after:bg-site-black;
+}
+
+.link--black {
+	@apply text-black hover:text-site-white after:bg-site-white;
+}
+
+nav ul li a {
+	@apply relative text-site-white font-poppins font-semibold text-base hover:text-primary transition-colors duration-300 after:absolute after:content-[''] after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-primary translate-x-50 after:scale-x-0 after:transition-transform after:duration-300 hover:after:translate-x-0 hover:after:scale-x-100;
+}
+
+.avatar-menu {
+	@apply flex flex-col items-center justify-between gap-5;
+}
+
+.avatar-menu li a {
+	@apply relative font-poppins font-semibold text-site-white text-5xl md:text-6xl hover:text-site-black transition-colors duration-300 after:absolute after:content-[''] after:left-0 after:bottom-0 after:w-full after:h-[3px] after:bg-site-black translate-x-50 after:scale-x-0 after:transition-transform after:duration-300 hover:after:translate-x-0 hover:after:scale-x-100;
+}
+
+.mobile-menu {
+	@apply flex flex-col items-start justify-between gap-5;
+}
+
+.mobile-menu li a {
+	@apply font-poppins font-semibold text-site-black text-base;
+}
+
+.footer-email {
+	@apply text-white font-semibold text-3xl md:text-5xl font-poppins hover:text-primary hover:transition-colors hover:ease-in-out hover:duration-300;
+}
+
+.hamburger-menu-icon {
+	@apply block md:hidden;
+}
+
+.contact-form {
+	@apply bg-site-black rounded-lg p-5 md:p-10 border-site-white border;
+}
+
+.contact-form label {
+	@apply text-base text-site-white font-bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+	@apply mt-5 bg-site-white p-3 rounded w-full;
 }

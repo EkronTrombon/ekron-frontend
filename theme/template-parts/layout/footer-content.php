@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying the footer content
  *
@@ -9,44 +10,32 @@
 
 ?>
 
-<footer id="colophon">
-
-	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-		<aside role="complementary" aria-label="<?php esc_attr_e( 'Footer', 'ekron' ); ?>">
-			<?php dynamic_sidebar( 'sidebar-1' ); ?>
-		</aside>
-	<?php endif; ?>
-
-	<?php if ( has_nav_menu( 'menu-2' ) ) : ?>
-		<nav aria-label="<?php esc_attr_e( 'Footer Menu', 'ekron' ); ?>">
+<footer id="colophon" class="bg-black text-white">
+	<?php get_template_part('template-parts/components/footer/avatar-menu'); ?>
+	<?php get_template_part('template-parts/components/footer/email'); ?>
+	<div class="container flex flex-col md:flex-row gap-5 justify-between items-center px-5 md:px-0 py-5 md:py-10">
+		<div class="logo">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/EKR_Logo_Horizontal_White.svg" alt="Ekron Frontend Logo" width="170">
+		</div>
+		<nav id="site-navigation" aria-label="<?php esc_attr_e('Main Navigation', 'ekron'); ?>">
 			<?php
 			wp_nav_menu(
 				array(
-					'theme_location' => 'menu-2',
-					'menu_class'     => 'footer-menu',
-					'depth'          => 1,
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+					'items_wrap'     => '<ul id="%1$s" class="%2$s" aria-label="submenu">%3$s</ul>',
 				)
 			);
 			?>
 		</nav>
-	<?php endif; ?>
+		<a href="/contact/" class="button button--primary">Contact</a>
+	</div>
 
-	<div>
-		<?php
-		$ekron_blog_info = get_bloginfo( 'name' );
-		if ( ! empty( $ekron_blog_info ) ) :
-			?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
-			<?php
-		endif;
-
-		/* translators: 1: WordPress link, 2: WordPress. */
-		printf(
-			'<a href="%1$s">proudly powered by %2$s</a>.',
-			esc_url( __( 'https://wordpress.org/', 'ekron' ) ),
-			'WordPress'
-		);
-		?>
+	<div class="container flex justify-between items-center py-5 border-t border-white px-5 md:px-0">
+		<div>
+			<a class="link link--primary" href="<?= esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
+		</div>
+		<?php get_template_part('template-parts/components/social'); ?>
 	</div>
 
 </footer><!-- #colophon -->

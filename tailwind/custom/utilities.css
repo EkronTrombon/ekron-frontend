@@ -6,3 +6,10 @@
  *
  * https://tailwindcss.com/docs/adding-custom-styles#adding-custom-utilities
  */
+.container {
+	@apply max-w-[1280px] mx-auto px-5 md:px-0;
+}
+
+.menu {
+	@apply flex justify-between items-center gap-10 font-poppins font-bold text-base;
+}

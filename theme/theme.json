@@ -16,18 +16,43 @@
 				},
 				{
 					"slug": "primary",
-					"color": "#b91c1c",
+					"color": "#F16529",
 					"name": "Primary"
 				},
 				{
 					"slug": "secondary",
-					"color": "#15803d",
+					"color": "#E44D26",
 					"name": "Secondary"
 				},
 				{
 					"slug": "tertiary",
-					"color": "#0369a1",
+					"color": "#182327",
 					"name": "Tertiary"
+				},
+				{
+					"slug": "quaternary",
+					"color": "#E3CC9B",
+					"name": "Quaternary"
+				},
+				{
+					"slug": "quinary",
+					"color": "#F9BD15",
+					"name": "Quinary"
+				},
+				{
+					"slug": "site-black",
+					"color": "#111111",
+					"name": "Site Black"
+				},
+				{
+					"slug": "site-white",
+					"color": "#FFFFFF",
+					"name": "Site White"
+				},
+				{
+					"slug": "site-grey",
+					"color": "#CCCCCC",
+					"name": "Site Grey"
 				}
 			]
 		},
