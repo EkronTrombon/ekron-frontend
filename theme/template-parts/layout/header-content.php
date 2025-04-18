@@ -12,9 +12,9 @@
 
 <header id="masthead" class="bg-black text-white">
 	<div class="container flex justify-between items-center px-5 md:px-0 py-10">
-		<div class="logo">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/EKR_Logo_Horizontal_White.svg" alt="Ekron Frontend Logo" width="170">
-		</div>
+		<a href="/" class="logo">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/EKR_Logo_Horizontal_White.svg" alt="Ekron Frontend Logo" width="180">
+		</a>
 		<nav class="hidden md:block" id="site-navigation" aria-label="<?php esc_attr_e('Main Navigation', 'ekron'); ?>">
 			<?php
 			wp_nav_menu(
@@ -42,7 +42,7 @@
 					x-transition:leave="transition ease-in duration-300"
 					x-transition:leave-start="opacity-100 transform translate-x-0"
 					x-transition:leave-end="opacity-0 transform translate-x-[-10px]"
-					class="md:hidden absolute top-0 right-0 w-3/4 h-screen bg-site-grey shadow-md z-10 py-20 px-5">
+					class="md:hidden fixed top-0 right-0 w-3/4 h-screen bg-site-grey shadow-md z-10 py-20 px-5">
 					<div class="flex justify-between items-center mb-10 pb-5 border-b-2 border-site-black">
 						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/EKR_Logo_Horizontal_Black.svg" alt="Ekron Frontend Logo" width="120">
 						<button @click="open = ! open" class="md:hidden focus:outline-none">
@@ -60,6 +60,9 @@
 						)
 					);
 					?>
+					<div class="mt-5">
+						<a href="/contact/" class="button button--hollow-black">Contact</a>
+					</div>
 				</div>
 			</div>
 		</div>

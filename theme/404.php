@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying 404 pages (not found)
  *
@@ -9,23 +10,13 @@
 
 get_header();
 ?>
-
-	<section id="primary">
-		<main id="main">
-
-			<div>
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Page Not Found', 'ekron' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div <?php ekron_content_class( 'page-content' ); ?>>
-					<p><?php esc_html_e( 'This page could not be found. It might have been removed or renamed, or it may never have existed.', 'ekron' ); ?></p>
-					<?php get_search_form(); ?>
-				</div><!-- .page-content -->
-			</div>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
+<section class="bg-site-black">
+	<div class="container flex flex-col gap-10 justify-center items-center py-20 md:py-[120px]">
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/404.png" alt="Page not found Image" width="400">
+		<p class="text-site-white"><?php esc_html_e('This page could not be found. It might have been removed or renamed, or it may never have existed.', 'ekron'); ?></p>
+		<a href="/" class="button button--primary">Take me Home</a>
+	</div>
+</section>
 
 <?php
 get_footer();

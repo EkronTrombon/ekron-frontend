@@ -14,9 +14,9 @@
 	<?php get_template_part('template-parts/components/footer/avatar-menu'); ?>
 	<?php get_template_part('template-parts/components/footer/email'); ?>
 	<div class="container flex flex-col md:flex-row gap-5 justify-between items-center px-5 md:px-0 py-5 md:py-10">
-		<div class="logo">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/EKR_Logo_Horizontal_White.svg" alt="Ekron Frontend Logo" width="170">
-		</div>
+		<a href="/" class="logo">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/EKR_Logo_Horizontal_White.svg" alt="Ekron Frontend Logo" width="180">
+		</a>
 		<nav id="site-navigation" aria-label="<?php esc_attr_e('Main Navigation', 'ekron'); ?>">
 			<?php
 			wp_nav_menu(
