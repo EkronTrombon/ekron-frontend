@@ -31,7 +31,7 @@ get_header();
 					<a href="<?= the_permalink(); ?>" class="relative">
 						<?php the_post_thumbnail('full', ['class' => 'w-full h-full object-cover rounded-lg']); ?>
 						<div class="absolute inset-0 m-32 bg-white opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100 flex flex-col gap-5 items-center justify-center p-10 rounded-lg">
-							<h3 class="h3 text-site-black"><?= get_the_title(); ?></h3>
+							<h3 class="h3 text-site-black text-center"><?= get_the_title(); ?></h3>
 							<div class="text-center text-site-black"><?= get_the_excerpt(); ?></div>
 						</div>
 					</a>

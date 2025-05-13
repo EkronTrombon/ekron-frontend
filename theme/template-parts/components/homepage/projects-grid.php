@@ -14,7 +14,7 @@ $link = get_field('homepage_project_grid_link');
                 <a href="<?= the_permalink($project->ID); ?>" class="relative">
                     <?= get_the_post_thumbnail($project->ID, 'full', ['class' => 'w-full h-full object-cover rounded-lg']); ?>
                     <div class="absolute inset-0 m-32 bg-white opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100 flex flex-col gap-5 items-center justify-center p-10 rounded-lg">
-                        <h3 class="h3 text-site-black"><?= get_the_title($project->ID); ?></h3>
+                        <h3 class="h3 text-site-black text-center"><?= get_the_title($project->ID); ?></h3>
                         <div class="text-center text-site-black"><?= get_the_excerpt($project->ID); ?></div>
                     </div>
                 </a>
