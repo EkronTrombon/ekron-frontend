@@ -11,6 +11,7 @@ $add_background_shape = get_field('project_banner_background_shape');
 
 $text_position = get_field('project_detail_text_position');
 $heading = get_field('project_detail_heading');
+$link = get_field('project_detail_link');
 $info = get_field('project_detail_info');
 $left_image = get_field('project_detail_left_image');
 $right_image = get_field('project_detail_right_image');
@@ -43,7 +44,14 @@ get_header();
 
 <section class="bg-site-black py-16 md:py-24">
 	<div class="container grid grid-cols-1 md:grid-cols-2 gap-y-16 gap-x-5">
-		<h2 class="h2 text-site-white <?php if ($text_position == 'left') : ?>order-1<?php else : ?>order-2<?php endif; ?>"><?= $heading; ?></h2>
+		<div class="">
+			<h2 class="h2 text-site-white <?php if ($text_position == 'left') : ?>order-1<?php else : ?>order-2<?php endif; ?>"><?= $heading; ?></h2>
+			<?php if ($link != '') : ?>
+				<div class="mt-10">
+					<a class="link link--bold link--primary-reverse w-fit" href="<?= $link; ?>" target="_blank">Project Link</a>
+				</div>
+			<?php endif; ?>
+		</div>
 		<div class="text-xl text-site-white <?php if ($text_position == 'left') : ?>order-2<?php else : ?>order-1<?php endif; ?>"><?= $info; ?></div>
 		<img src="<?= $left_image['url']; ?>" alt="Left Image" class="rounded-lg w-full h-full object-cover order-3" />
 		<img src="<?= $right_image['url']; ?>" alt="Right Image" class="rounded-lg w-full h-full object-cover order-4" />

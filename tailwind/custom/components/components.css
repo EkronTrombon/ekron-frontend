@@ -84,6 +84,10 @@
 	@apply text-primary hover:text-site-white after:bg-site-white;
 }
 
+.link--primary-reverse {
+	@apply text-site-white hover:text-primary after:bg-primary;
+}
+
 .link--white {
 	@apply text-white hover:text-site-black after:bg-site-black;
 }
